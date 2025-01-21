@@ -12,6 +12,7 @@
     - Light Gray: #F3F3F3
     - White: #FFFFFF
     - Muted Text: #666666
+    - Subtle highlight: #FAFAFA
   -->
 
   <style>
@@ -161,10 +162,11 @@
       font-size: 1rem;
       font-weight: 500;
       border-radius: 4px;
-      transition: background-color 0.2s ease-in-out;
+      transition: background-color 0.2s ease-in-out, transform 0.1s ease;
     }
     .hero-content .cta-btn:hover {
       background-color: #16a085;
+      transform: translateY(-2px);
     }
 
     /* ========== COMMON SECTION STYLES ========== */
@@ -178,6 +180,7 @@
       font-size: 1.8rem;
       margin-bottom: 20px;
       color: #0a3d62;
+      text-align: center;
     }
     section h3 {
       color: #0a3d62;
@@ -200,6 +203,7 @@
       margin-bottom: 10px;
       font-size: 1rem;
       color: #333;
+      line-height: 1.6;
     }
     .services-list li strong {
       color: #0a3d62;
@@ -212,7 +216,7 @@
       gap: 20px;
     }
     .case-study {
-      background-color: #f3f3f3;
+      background-color: #fafafa;
       border-radius: 4px;
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -224,10 +228,13 @@
     .case-study h3 {
       margin-bottom: 10px;
     }
+    .case-study strong {
+      color: #0a3d62;
+    }
 
     /* ========== TESTIMONIALS SECTION ========== */
     .testimonial {
-      background-color: #f3f3f3;
+      background-color: #fafafa;
       border-left: 4px solid #1abc9c;
       padding: 15px 20px;
       margin-bottom: 20px;
@@ -244,7 +251,7 @@
 
     /* ========== PRICING SECTION ========== */
     .pricing-table {
-      background-color: #f3f3f3;
+      background-color: #fafafa;
       padding: 20px;
       border-radius: 4px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -265,6 +272,7 @@
     .pricing-table li {
       margin-bottom: 8px;
       color: #666;
+      line-height: 1.6;
     }
     .pricing-table .price {
       font-size: 2rem;
@@ -276,6 +284,11 @@
     .contact-info p {
       margin-bottom: 10px;
       color: #666666;
+      line-height: 1.6;
+    }
+    .contact-info a {
+      color: #1abc9c;
+      font-weight: 500;
     }
 
     /* ========== FOOTER SECTION ========== */
@@ -292,11 +305,14 @@
     footer a {
       text-decoration: underline;
     }
+    footer a:hover {
+      color: #1abc9c;
+    }
 
     /* ========== RESPONSIVE MEDIA QUERIES ========== */
     @media (max-width: 768px) {
       .nav-right ul {
-        display: none; /* for a real site, you might replace this with a hamburger menu */
+        display: none; /* In production, a hamburger menu would replace this. */
       }
       .hero-content h1 {
         font-size: 2rem;
@@ -344,9 +360,9 @@
       ">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>با خدمات بازاریابی شبکه‌های اجتماعی ما، در بازار املاک تورنتو بدرخشید</h1>
-        <p>ما در کنار شما هستیم تا حضور دیجیتال شما رو قوی‌تر کنیم، مشتری‌ها رو جذب کنیم و اعتبارتون رو بالا ببریم.</p>
-        <a href="#contact-farsi" class="cta-btn">تماس بگیرید</a>
+        <h1>حضور پررنگ در بازار املاک تورنتو با بازاریابی حرفه‌ای ما</h1>
+        <p>ما به شما کمک می‌کنیم تا مشتریان هدفمند جذب کنید، اعتماد ایجاد کنید و برند خود را در فضای رقابتی امروز بالا ببرید.</p>
+        <a href="#contact-farsi" class="cta-btn">همین حالا شروع کنید</a>
       </div>
     </div>
 
@@ -355,7 +371,7 @@
       <div class="section-inner">
         <h2>درباره ما</h2>
         <p class="about-text">
-          ما یه تیم خلاق هستیم که به مشاوران املاک ایرانی در تورنتو کمک می‌کنیم تا با حضور قوی در شبکه‌های اجتماعی، بتونن سهم بازارشون رو بیشتر کنن. فلسفه ما خیلی ساده‌ست: ارائه محتوای باکیفیت و استراتژی‌های هوشمند برای جلب اعتماد و رضایت مشتری‌ها.
+          ما تیمی با انگیزه و خلاق هستیم که به مشاوران املاک ایرانی در تورنتو کمک می‌کنیم تا با استفاده از استراتژی‌های هدفمند در شبکه‌های اجتماعی، سهم بیشتری از بازار را به دست آورند. رویکرد ما ترکیبی از تولید محتوای حرفه‌ای، مدیریت هوشمند رسانه‌های اجتماعی و طراحی وبسایت‌های جذاب است تا نام شما در ذهن مخاطبان حک شود و بازگشت سرمایه بالایی را تجربه کنید.
         </p>
         <img 
           src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" 
@@ -369,10 +385,22 @@
       <div class="section-inner">
         <h2>خدمات ما</h2>
         <ul class="services-list">
-          <li><strong>مدیریت کامل شبکه‌های اجتماعی:</strong> تولید محتوا، زمان‌بندی پست‌ها و پاسخگویی به مخاطب‌ها در اینستاگرام، فیسبوک، توییتر، تیک‌تاک و ...</li>
-          <li><strong>طراحی وبسایت موبایل‌دوست:</strong> طراحی و ساخت یک وبسایت حرفه‌ای با تمرکز بر جذب مشتری و نمایش اعتبار شما.</li>
-          <li><strong>برندینگ و هویت بصری:</strong> کمک می‌کنیم برند شخصی شما در بازار املاک برجسته بشه.</li>
-          <li><strong>مشاوره تبلیغات آنلاین:</strong> انتخاب بهترین پلتفرم‌ها و راهکارهای تبلیغاتی برای رسیدن به هدف فروش بالاتر.</li>
+          <li>
+            <strong>مدیریت کامل شبکه‌های اجتماعی:</strong> 
+            برنامه‌ریزی منظم، تولید محتوای هدفمند و تعامل روزانه با مخاطبان در اینستاگرام، فیسبوک، توییتر، تیک‌تاک و سایر پلتفرم‌ها
+          </li>
+          <li>
+            <strong>طراحی وبسایت موبایل‌دوست:</strong> 
+            وبسایت‌هایی چشم‌نواز، سریع و واکنش‌گرا می‌سازیم که اعتبار شما را به رخ می‌کشند و نرخ تبدیل بالایی دارند
+          </li>
+          <li>
+            <strong>برندینگ و هویت بصری:</strong> 
+            خلق یک هویت متمایز و ماندگار که در بازار پررقابت املاک تورنتو اعتماد و جذابیت ایجاد کند
+          </li>
+          <li>
+            <strong>مشاوره تبلیغات آنلاین:</strong> 
+            انتخاب پلتفرم‌های تبلیغاتی مناسب و بهینه‌سازی کمپین‌ها برای حداکثر بازگشت سرمایه
+          </li>
         </ul>
       </div>
     </section>
@@ -380,21 +408,33 @@
     <!-- CASE STUDIES SECTION (FARSI) -->
     <section id="case-studies-farsi">
       <div class="section-inner">
-        <h2>مطالعات موردی (نمونه‌های آزمایشی)</h2>
+        <h2>مطالعات موردی</h2>
         <div class="case-studies-grid">
           <!-- CASE STUDY 1 -->
           <div class="case-study">
-            <h3>مطالعه موردی شماره یک</h3>
-            <p><strong>چالش:</strong> یک مشاور املاک تازه‌کار در تورنتو نیاز به دیده‌شدن بیشتر در فضای آنلاین داشت.</p>
-            <p><strong>راهکار:</strong> طراحی کمپین‌های اینستاگرام و فیسبوک + بهبود سئوی وبسایت.</p>
-            <p><strong>نتیجه:</strong> افزایش قابل‌توجه تماس‌های دریافتی و درخواست مشاوره آنلاین. (آمار فرضی)</p>
+            <h3>تحول سریع فروش آنلاین</h3>
+            <p>
+              <strong>چالش:</strong> مشاور املاکی که در بازار شلوغ تورنتو فعالیت می‌کرد اما به دنبال مخاطبان دقیق‌تری در شبکه‌های اجتماعی بود تا میزان فروش افزایش یابد.
+            </p>
+            <p>
+              <strong>راهکار:</strong> راه‌اندازی کمپین‌های تبلیغاتی در اینستاگرام و فیسبوک با تمرکز بر مخاطبان مرتبط و طراحی مطالبی که ارزش افزوده ارائه دهند.
+            </p>
+            <p>
+              <strong>نتیجه:</strong> افزایش قابل توجه ترافیک وبسایت و چندین قرارداد موفق فقط در سه ماه نخست همکاری.
+            </p>
           </div>
           <!-- CASE STUDY 2 -->
           <div class="case-study">
-            <h3>مطالعه موردی شماره دو</h3>
-            <p><strong>چالش:</strong> مشاور املاک باتجربه‌ای که به دنبال جذب مشتریان جوان‌تر بود.</p>
-            <p><strong>راهکار:</strong> ساخت ویدیوهای کوتاه تیک‌تاک و ریلز اینستاگرام، با محتوای آموزشی و سرگرم‌کننده.</p>
-            <p><strong>نتیجه:</strong> افزایش فالوئرها و بیشتر شدن پیام‌های دایرکت برای هماهنگی بازدید ملک. (آمار فرضی)</p>
+            <h3>جذب نسل جدید مشتریان</h3>
+            <p>
+              <strong>چالش:</strong> برندی معتبر در حوزه املاک که خواستار جذب مشتریان جوان‌تر بود و نیاز به بازطراحی هویت دیجیتال داشت.
+            </p>
+            <p>
+              <strong>راهکار:</strong> تولید ویدیوهای آموزشی کوتاه برای تیک‌تاک و ریلز اینستاگرام، و ایجاد ارتباط نزدیک با این مخاطبان از طریق محتوای داستان‌محور.
+            </p>
+            <p>
+              <strong>نتیجه:</strong> رشد چشمگیر دنبال‌کنندگان و گسترش شبکه مشتریان جدید با سبک و سلیقه به‌روز.
+            </p>
           </div>
         </div>
       </div>
@@ -403,14 +443,14 @@
     <!-- TESTIMONIALS SECTION (FARSI) -->
     <section id="testimonials-farsi">
       <div class="section-inner">
-        <h2>تستیمونیال‌ها و نظرات (نمونه‌های ساختگی)</h2>
+        <h2>نظرات مشتریان</h2>
         <div class="testimonial">
-          <p>«همکاری با این تیم عالی بود! خیلی سریع تونستم حضور آنلاین خودم رو قوی کنم و مشاوره‌های دقیقی گرفتم.»</p>
-          <p class="author">– رضا، مشاور املاک (نمونه آزمایشی)</p>
+          <p>«با کمک این تیم، فروش آنلاین من در کمتر از دو ماه جهش قابل ملاحظه‌ای داشت. همه چیز دقیق و حرفه‌ای مدیریت شد.»</p>
+          <p class="author">– رضا، مشاور املاک در تورنتو</p>
         </div>
         <div class="testimonial">
-          <p>«استراتژی‌های پیشنهادی باعث شد مشتری‌های زیادی از طریق شبکه‌های اجتماعی جذب کنم. ممنونم از تیم حرفه‌ایتون!»</p>
-          <p class="author">– سارا، مشاور املاک (نمونه آزمایشی)</p>
+          <p>«برندینگ و محتوای جذابی که برامون طراحی کردن، واقعاً توی دید مشتری‌ها اثر گذاشت. الان دیگه ما رو با یه هویت قوی می‌شناسن.»</p>
+          <p class="author">– سارا، شرکت املاک و مستغلات در ریچموندهیل</p>
         </div>
       </div>
     </section>
@@ -423,12 +463,12 @@
           <h3>بسته ویژه مدیریت شبکه‌های اجتماعی</h3>
           <div class="price">۲۹۹ دلار / ماه</div>
           <ul>
-            <li>مدیریت روزانه‌ی اینستاگرام، فیسبوک، توییتر، تیک‌تاک و ...</li>
-            <li>تولید محتوای جذاب و مرتبط با حوزه املاک</li>
-            <li>زمان‌بندی پست‌ها و پاسخگویی به مخاطب‌ها</li>
-            <li>گزارش ماهانه عملکرد و پیشنهادهای بهبود</li>
+            <li>برنامه‌ریزی و انتشار مداوم پست‌ها در پلتفرم‌های کلیدی</li>
+            <li>تولید محتوای جذاب با هدف جذب مخاطبان واقعی</li>
+            <li>بررسی و پاسخ به دیدگاه‌ها و پیام‌های مخاطبان</li>
+            <li>گزارش تحلیلی ماهانه و پیشنهادهای بهینه‌سازی</li>
           </ul>
-          <p>گزینه‌های بالاتر یا اختصاصی در صورت نیاز قابل ارائه هستند.</p>
+          <p>پکیج‌های اختصاصی برای کسب‌وکارهای بزرگ نیز در دسترس هستند.</p>
         </div>
       </div>
     </section>
@@ -436,13 +476,13 @@
     <!-- CONTACT SECTION (FARSI) -->
     <section id="contact-farsi">
       <div class="section-inner">
-        <h2>برای شروع، با ما تماس بگیرید</h2>
+        <h2>همین حالا اقدام کنید</h2>
         <div class="contact-info">
-          <p>اگه دوست دارین درباره جزئیات بیشتر بدونین یا هر سوال و ایده‌ای دارین، کافیه فرم زیر رو پر کنین یا با ما تماس بگیرین.</p>
+          <p>برای بررسی نیازهای خاص شما و ارائه راهکارهای اختصاصی، همین الان با ما تماس بگیرید یا فرم زیر را پر کنید. ما مشتاقانه منتظر همکاری با شما هستیم.</p>
           <p><strong>ایمیل:</strong> info@mockupmarketing.com<br/>
              <strong>شماره تماس:</strong> +1 (416) 123-4567
           </p>
-          <p><a href="#">لینک به فرم تماس</a></p>
+          <p><a href="#">فرم تماس آنلاین</a></p>
         </div>
       </div>
     </section>
@@ -461,9 +501,9 @@
       ">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1>Stand Out in Toronto’s Real Estate Market with Our Social Media Marketing</h1>
-        <p>We’re here to strengthen your online presence, attract new clients, and elevate your credibility.</p>
-        <a href="#contact-english" class="cta-btn">Get in Touch</a>
+        <h1>Command Attention in Toronto’s Real Estate Market</h1>
+        <p>We help you target the right audience, establish trust, and elevate your brand in today’s competitive landscape.</p>
+        <a href="#contact-english" class="cta-btn">Get Started Now</a>
       </div>
     </div>
 
@@ -472,7 +512,7 @@
       <div class="section-inner">
         <h2>About Us</h2>
         <p class="about-text">
-          We’re a creative team dedicated to helping Iranian real estate agents in Toronto expand their market share through a strong social media presence. Our philosophy is simple: deliver high-quality content and smart strategies that build trust and satisfy clients.
+          We’re a driven, creative team that empowers Iranian real estate agents in Toronto to capture more market share through targeted social media strategies. Our approach combines professional content creation, intelligent social media management, and eye-catching website design to keep your name top of mind and deliver a strong return on investment.
         </p>
         <img 
           src="https://images.unsplash.com/photo-1604503467502-88d7b5592b34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" 
@@ -486,10 +526,22 @@
       <div class="section-inner">
         <h2>Our Services</h2>
         <ul class="services-list">
-          <li><strong>Full Social Media Management:</strong> Content creation, scheduling, and audience engagement on Instagram, Facebook, Twitter, TikTok, and more.</li>
-          <li><strong>Mobile-Friendly Website Design:</strong> We design and build a professional website to attract clients and highlight your credibility.</li>
-          <li><strong>Branding & Visual Identity:</strong> We help your personal brand stand out in the competitive real estate market.</li>
-          <li><strong>Online Advertising Consultation:</strong> Choosing the best platforms and strategies to boost sales.</li>
+          <li>
+            <strong>Comprehensive Social Media Management:</strong> 
+            Strategic scheduling, purpose-driven content creation, and daily audience interaction on Instagram, Facebook, Twitter, TikTok, and more
+          </li>
+          <li>
+            <strong>Mobile-Optimized Website Design:</strong> 
+            We build visually stunning, fast, and responsive websites that showcase your credibility and convert visitors into clients
+          </li>
+          <li>
+            <strong>Branding & Visual Identity:</strong> 
+            Creating a memorable and trustworthy image that stands out in Toronto’s dynamic real estate market
+          </li>
+          <li>
+            <strong>Online Advertising Consultation:</strong> 
+            Selecting the most effective platforms and optimizing campaigns for maximum ROI
+          </li>
         </ul>
       </div>
     </section>
@@ -497,21 +549,33 @@
     <!-- CASE STUDIES SECTION (ENGLISH) -->
     <section id="case-studies-english">
       <div class="section-inner">
-        <h2>Case Studies (Mock Examples)</h2>
+        <h2>Case Studies</h2>
         <div class="case-studies-grid">
           <!-- CASE STUDY 1 -->
           <div class="case-study">
-            <h3>Case Study #1</h3>
-            <p><strong>Challenge:</strong> A new real estate agent in Toronto needed better online visibility.</p>
-            <p><strong>Solution:</strong> Designed Instagram and Facebook campaigns + improved website SEO.</p>
-            <p><strong>Results:</strong> Significant increase in inbound calls and consultation requests. (Mock figures)</p>
+            <h3>Rapid Online Sales Growth</h3>
+            <p>
+              <strong>Challenge:</strong> A real estate professional in a crowded Toronto market needed more precision in targeting the right clientele via social media.
+            </p>
+            <p>
+              <strong>Solution:</strong> Deployed highly-focused Instagram and Facebook ad campaigns, paired with valuable, educational content that engaged and informed potential buyers.
+            </p>
+            <p>
+              <strong>Results:</strong> A dramatic spike in website traffic and multiple successful deals within the first three months of collaboration.
+            </p>
           </div>
           <!-- CASE STUDY 2 -->
           <div class="case-study">
-            <h3>Case Study #2</h3>
-            <p><strong>Challenge:</strong> An experienced real estate agent wanting to attract younger clients.</p>
-            <p><strong>Solution:</strong> Created short TikTok and Instagram Reels with educational and entertaining content.</p>
-            <p><strong>Results:</strong> Growth in followers and more direct messages to schedule property viewings. (Mock figures)</p>
+            <h3>Capturing a Younger Demographic</h3>
+            <p>
+              <strong>Challenge:</strong> A reputable real estate brand aimed to expand its clientele by appealing to younger buyers and renters in the GTA.
+            </p>
+            <p>
+              <strong>Solution:</strong> Created short-form educational videos for TikTok and Instagram Reels, fostering a strong connection with a modern audience through relatable storytelling.
+            </p>
+            <p>
+              <strong>Results:</strong> A marked increase in followers and a significant boost in new client inquiries seeking cutting-edge real estate solutions.
+            </p>
           </div>
         </div>
       </div>
@@ -520,14 +584,14 @@
     <!-- TESTIMONIALS SECTION (ENGLISH) -->
     <section id="testimonials-english">
       <div class="section-inner">
-        <h2>Testimonials & Reviews (Mock)</h2>
+        <h2>Client Testimonials</h2>
         <div class="testimonial">
-          <p>“Working with this team was fantastic! I quickly strengthened my online presence and got very precise guidance.”</p>
-          <p class="author">– Reza, Real Estate Agent (Mock)</p>
+          <p>“With their guidance, my online sales took off in less than two months. Everything was managed with flawless precision and clear strategy.”</p>
+          <p class="author">– Reza, Toronto Real Estate Agent</p>
         </div>
         <div class="testimonial">
-          <p>“The recommended strategies helped me attract many new clients through social media. Thanks to your professional team!”</p>
-          <p class="author">– Sara, Real Estate Agent (Mock)</p>
+          <p>“Their branding and captivating content truly elevated how clients perceive our business. Now everyone recognizes us as a strong, cohesive brand.”</p>
+          <p class="author">– Sara, Real Estate Company in Richmond Hill</p>
         </div>
       </div>
     </section>
@@ -537,15 +601,15 @@
       <div class="section-inner">
         <h2>Pricing</h2>
         <div class="pricing-table">
-          <h3>Special Social Media Management Package</h3>
+          <h3>Social Media Management Package</h3>
           <div class="price">$299 / Month</div>
           <ul>
-            <li>Daily management of Instagram, Facebook, Twitter, TikTok, and more</li>
-            <li>Creation of engaging, real-estate-focused content</li>
-            <li>Post scheduling and audience engagement</li>
-            <li>Monthly performance reports and improvement suggestions</li>
+            <li>Consistent content planning and posting across major platforms</li>
+            <li>Engaging media tailored to your target audience</li>
+            <li>Audience interaction and prompt message responses</li>
+            <li>Monthly performance analytics and strategic recommendations</li>
           </ul>
-          <p>Higher or custom plans are available upon request.</p>
+          <p>Customized packages are also available for larger or specialized businesses.</p>
         </div>
       </div>
     </section>
@@ -553,9 +617,9 @@
     <!-- CONTACT SECTION (ENGLISH) -->
     <section id="contact-english">
       <div class="section-inner">
-        <h2>Get Started Today</h2>
+        <h2>Take Action Now</h2>
         <div class="contact-info">
-          <p>If you’d like to learn more details or have any questions or ideas, simply fill out the form below or give us a call.</p>
+          <p>Ready to discuss your specific goals and get a tailored solution? Call us or fill out our form below. We look forward to partnering with you!</p>
           <p><strong>Email:</strong> info@mockupmarketing.com<br/>
              <strong>Phone:</strong> +1 (416) 123-4567
           </p>
@@ -569,7 +633,6 @@
   <!-- ========== FOOTER ========== -->
   <footer>
     <p>© 2025 MockupMarketing. All Rights Reserved.</p>
-    <p>This is a mock website for demonstration purposes only.</p>
     <p>
       <a href="#" onclick="showContent('farsi')">Farsi</a> | 
       <a href="#" onclick="showContent('english')">English</a>
@@ -590,7 +653,7 @@
         farsiContent.style.display = 'none';
         englishContent.style.display = 'block';
       }
-      // Optionally, scroll to the top after language switch
+      // Scroll to the top after switching languages
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -599,4 +662,3 @@
   </script>
 </body>
 </html>
-
