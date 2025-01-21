@@ -4,315 +4,579 @@
   <meta charset="UTF-8" />
   <title>Social Media Marketing for Iranian Real Estate Agents</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 
+    Color Palette (Example):
+    - Dark Navy: #0A3D62
+    - Accent Teal: #1ABC9C
+    - Light Gray: #F3F3F3
+    - White: #FFFFFF
+    - Muted Text: #666666
+  -->
+
   <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
-    }
-
-    header, nav, section, footer {
-      padding: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #007BFF;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Simple Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
+    /* ========== GLOBAL STYLES ========== */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    nav li {
-      margin: 0 10px;
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f3f3;
+      color: #333;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: #1abc9c;
+      transition: color 0.2s ease-in-out;
+    }
+    a:hover {
+      color: #16a085;
+    }
+    ul {
+      list-style: none;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 600;
     }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #fafafa;
-      margin-bottom: 40px;
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    .hero h1 {
-      margin-bottom: 10px;
-      font-size: 2em;
+
+    /* ========== NAVIGATION ========== */
+    nav {
+      width: 100%;
+      background-color: #0a3d62;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
-    .hero p {
-      font-size: 1.2em;
-      color: #555;
+    .nav-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      height: 70px;
     }
-    .cta-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #007BFF;
+    .nav-left {
+      display: flex;
+      align-items: center;
       color: #fff;
-      border-radius: 4px;
     }
-    .cta-btn:hover {
-      background-color: #0056b3;
-    }
-
-    /* Section Titles */
-    h2 {
-      margin-top: 0;
-    }
-
-    /* Services, Case Studies, Testimonials, Pricing, Contact Sections */
-    section {
-      margin-bottom: 40px;
-    }
-    .grid {
-      display: grid;
-      grid-gap: 20px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #f0f0f0;
-      text-align: center;
-    }
-
-    /* Language Toggle Buttons */
-    .language-toggle {
-      margin-left: auto;
+    .nav-left .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
       margin-right: 20px;
     }
+    .nav-right ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-right li a {
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .nav-right li a:hover {
+      opacity: 0.8;
+    }
+    .language-toggle {
+      margin-left: 20px;
+    }
     .language-toggle button {
-      margin-left: 8px;
+      background-color: #1abc9c;
+      color: #fff;
+      border: none;
       padding: 6px 12px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      background: #fff;
+      margin-right: 8px;
       border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s ease-in-out;
     }
     .language-toggle button:hover {
-      background: #e6e6e6;
+      background-color: #16a085;
     }
 
-    /* Responsive Media Queries */
+    /* ========== HERO SECTION ========== */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      background-color: #0a3d62;
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      background-color: rgba(10, 61, 98, 0.6);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #e8e8e8;
+      margin-bottom: 20px;
+    }
+    .hero-content .cta-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #1abc9c;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .hero-content .cta-btn:hover {
+      background-color: #16a085;
+    }
+
+    /* ========== COMMON SECTION STYLES ========== */
+    section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #0a3d62;
+    }
+    section h3 {
+      color: #0a3d62;
+    }
+    .section-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ========== ABOUT SECTION ========== */
+    .about-text {
+      font-size: 1rem;
+      color: #666666;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* ========== SERVICES SECTION ========== */
+    .services-list li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #333;
+    }
+    .services-list li strong {
+      color: #0a3d62;
+    }
+
+    /* ========== CASE STUDIES SECTION ========== */
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .case-study {
+      background-color: #f3f3f3;
+      border-radius: 4px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+    .case-study:hover {
+      transform: translateY(-3px);
+    }
+    .case-study h3 {
+      margin-bottom: 10px;
+    }
+
+    /* ========== TESTIMONIALS SECTION ========== */
+    .testimonial {
+      background-color: #f3f3f3;
+      border-left: 4px solid #1abc9c;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .testimonial .author {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* ========== PRICING SECTION ========== */
+    .pricing-table {
+      background-color: #f3f3f3;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .pricing-table h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #0a3d62;
+    }
+    .pricing-table ul {
+      text-align: left;
+      margin: 20px auto;
+      max-width: 300px;
+    }
+    .pricing-table li {
+      margin-bottom: 8px;
+      color: #666;
+    }
+    .pricing-table .price {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #1abc9c;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact-info p {
+      margin-bottom: 10px;
+      color: #666666;
+    }
+
+    /* ========== FOOTER SECTION ========== */
+    footer {
+      background-color: #0a3d62;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer p, footer a {
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+    footer a {
+      text-decoration: underline;
+    }
+
+    /* ========== RESPONSIVE MEDIA QUERIES ========== */
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
+      .nav-right ul {
+        display: none; /* for a real site, you might replace this with a hamburger menu */
       }
-      nav li {
-        margin: 5px 0;
+      .hero-content h1 {
+        font-size: 2rem;
       }
-      .grid {
-        grid-template-columns: 1fr;
+      .hero-content p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
+
+  <!-- ========== NAVIGATION ========== -->
   <nav>
-    <div class="container">
-      <ul>
-        <li><strong>MockupMarketing</strong></li>
-      </ul>
-      <ul>
-        <li><a href="#home-farsi" onclick="showContent('farsi')">Home</a></li>
-        <li><a href="#about-farsi" onclick="showContent('farsi')">About</a></li>
-        <li><a href="#services-farsi" onclick="showContent('farsi')">Services</a></li>
-        <li><a href="#case-studies-farsi" onclick="showContent('farsi')">Case Studies</a></li>
-        <li><a href="#testimonials-farsi" onclick="showContent('farsi')">Testimonials</a></li>
-        <li><a href="#pricing-farsi" onclick="showContent('farsi')">Pricing</a></li>
-        <li><a href="#contact-farsi" onclick="showContent('farsi')">Contact</a></li>
-      </ul>
-      <div class="language-toggle">
-        <span>Select Language:</span>
-        <button onclick="showContent('farsi')">Farsi</button>
-        <button onclick="showContent('english')">English</button>
+    <div class="nav-content container">
+      <div class="nav-left">
+        <div class="logo">MockupMarketing</div>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="#home-farsi" onclick="showContent('farsi')">Home</a></li>
+          <li><a href="#about-farsi" onclick="showContent('farsi')">About</a></li>
+          <li><a href="#services-farsi" onclick="showContent('farsi')">Services</a></li>
+          <li><a href="#case-studies-farsi" onclick="showContent('farsi')">Case Studies</a></li>
+          <li><a href="#testimonials-farsi" onclick="showContent('farsi')">Testimonials</a></li>
+          <li><a href="#pricing-farsi" onclick="showContent('farsi')">Pricing</a></li>
+          <li><a href="#contact-farsi" onclick="showContent('farsi')">Contact</a></li>
+        </ul>
+        <div class="language-toggle">
+          <button onclick="showContent('farsi')">Farsi</button>
+          <button onclick="showContent('english')">English</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- FARSI CONTENT (RTL) -->
+  <!-- ========== FARSI CONTENT ========== -->
   <div id="farsiContent" dir="rtl">
-    <div id="home-farsi" class="hero">
-      <h1>با خدمات بازاریابی شبکه‌های اجتماعی ما، در بازار املاک تورنتو بدرخشید</h1>
-      <p>ما در کنار شما هستیم تا حضور دیجیتال شما رو قوی‌تر کنیم، مشتری‌ها رو جذب کنیم و اعتبارتون رو بالا ببریم.</p>
-      <a href="#contact-farsi" class="cta-btn">تماس بگیرید</a>
+    <!-- HERO SECTION (FARSI) -->
+    <div 
+      class="hero" 
+      id="home-farsi"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1590650042296-cfd79078f590?ixlib=rb-4.0.3&auto=format&fit=crop&w=1989&q=80');
+      ">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>با خدمات بازاریابی شبکه‌های اجتماعی ما، در بازار املاک تورنتو بدرخشید</h1>
+        <p>ما در کنار شما هستیم تا حضور دیجیتال شما رو قوی‌تر کنیم، مشتری‌ها رو جذب کنیم و اعتبارتون رو بالا ببریم.</p>
+        <a href="#contact-farsi" class="cta-btn">تماس بگیرید</a>
+      </div>
     </div>
 
-    <section id="about-farsi" class="container">
-      <h2>درباره ما</h2>
-      <p>ما یه تیم خلاق هستیم که به مشاوران املاک ایرانی در تورنتو کمک می‌کنیم تا با حضور قوی در شبکه‌های اجتماعی، بتونن سهم بازارشون رو بیشتر کنن. فلسفه ما خیلی ساده‌ست: ارائه محتوای باکیفیت و استراتژی‌های هوشمند برای جلب اعتماد و رضایت مشتری‌ها.</p>
+    <!-- ABOUT SECTION (FARSI) -->
+    <section id="about-farsi">
+      <div class="section-inner">
+        <h2>درباره ما</h2>
+        <p class="about-text">
+          ما یه تیم خلاق هستیم که به مشاوران املاک ایرانی در تورنتو کمک می‌کنیم تا با حضور قوی در شبکه‌های اجتماعی، بتونن سهم بازارشون رو بیشتر کنن. فلسفه ما خیلی ساده‌ست: ارائه محتوای باکیفیت و استراتژی‌های هوشمند برای جلب اعتماد و رضایت مشتری‌ها.
+        </p>
+        <img 
+          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" 
+          alt="About Us (Placeholder)" 
+        />
+      </div>
     </section>
 
-    <section id="services-farsi" class="container">
-      <h2>خدمات ما</h2>
-      <ul>
-        <li><strong>مدیریت کامل شبکه‌های اجتماعی:</strong> تولید محتوا، زمان‌بندی پست‌ها و پاسخگویی به مخاطب‌ها در اینستاگرام، فیسبوک، توییتر، تیک‌تاک و ...</li>
-        <li><strong>طراحی وبسایت موبایل‌دوست:</strong> طراحی و ساخت یک وبسایت حرفه‌ای با تمرکز بر جذب مشتری و نمایش اعتبار شما.</li>
-        <li><strong>برندینگ و هویت بصری:</strong> کمک می‌کنیم برند شخصی شما در بازار املاک برجسته بشه.</li>
-        <li><strong>مشاوره تبلیغات آنلاین:</strong> انتخاب بهترین پلتفرم‌ها و راهکارهای تبلیغاتی برای رسیدن به هدف فروش بالاتر.</li>
-      </ul>
+    <!-- SERVICES SECTION (FARSI) -->
+    <section id="services-farsi">
+      <div class="section-inner">
+        <h2>خدمات ما</h2>
+        <ul class="services-list">
+          <li><strong>مدیریت کامل شبکه‌های اجتماعی:</strong> تولید محتوا، زمان‌بندی پست‌ها و پاسخگویی به مخاطب‌ها در اینستاگرام، فیسبوک، توییتر، تیک‌تاک و ...</li>
+          <li><strong>طراحی وبسایت موبایل‌دوست:</strong> طراحی و ساخت یک وبسایت حرفه‌ای با تمرکز بر جذب مشتری و نمایش اعتبار شما.</li>
+          <li><strong>برندینگ و هویت بصری:</strong> کمک می‌کنیم برند شخصی شما در بازار املاک برجسته بشه.</li>
+          <li><strong>مشاوره تبلیغات آنلاین:</strong> انتخاب بهترین پلتفرم‌ها و راهکارهای تبلیغاتی برای رسیدن به هدف فروش بالاتر.</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="case-studies-farsi" class="container">
-      <h2>مطالعات موردی (نمونه‌های آزمایشی)</h2>
-      <div class="grid">
-        <div>
-          <h3>مطالعه موردی شماره یک</h3>
-          <p><strong>چالش:</strong> یک مشاور املاک تازه‌کار در تورنتو نیاز به دیده‌شدن بیشتر در فضای آنلاین داشت.</p>
-          <p><strong>راهکار:</strong> طراحی کمپین‌های اینستاگرام و فیسبوک + بهبود سئوی وبسایت.</p>
-          <p><strong>نتیجه:</strong> افزایش قابل‌توجه تماس‌های دریافتی و درخواست مشاوره آنلاین. (آمار فرضی)</p>
-        </div>
-        <div>
-          <h3>مطالعه موردی شماره دو</h3>
-          <p><strong>چالش:</strong> مشاور املاک باتجربه‌ای که به دنبال جذب مشتریان جوان‌تر بود.</p>
-          <p><strong>راهکار:</strong> ساخت ویدیوهای کوتاه تیک‌تاک و ریلز اینستاگرام، با محتوای آموزشی و سرگرم‌کننده.</p>
-          <p><strong>نتیجه:</strong> افزایش فالوئرها و بیشتر شدن پیام‌های دایرکت برای هماهنگی بازدید ملک. (آمار فرضی)</p>
+    <!-- CASE STUDIES SECTION (FARSI) -->
+    <section id="case-studies-farsi">
+      <div class="section-inner">
+        <h2>مطالعات موردی (نمونه‌های آزمایشی)</h2>
+        <div class="case-studies-grid">
+          <!-- CASE STUDY 1 -->
+          <div class="case-study">
+            <h3>مطالعه موردی شماره یک</h3>
+            <p><strong>چالش:</strong> یک مشاور املاک تازه‌کار در تورنتو نیاز به دیده‌شدن بیشتر در فضای آنلاین داشت.</p>
+            <p><strong>راهکار:</strong> طراحی کمپین‌های اینستاگرام و فیسبوک + بهبود سئوی وبسایت.</p>
+            <p><strong>نتیجه:</strong> افزایش قابل‌توجه تماس‌های دریافتی و درخواست مشاوره آنلاین. (آمار فرضی)</p>
+          </div>
+          <!-- CASE STUDY 2 -->
+          <div class="case-study">
+            <h3>مطالعه موردی شماره دو</h3>
+            <p><strong>چالش:</strong> مشاور املاک باتجربه‌ای که به دنبال جذب مشتریان جوان‌تر بود.</p>
+            <p><strong>راهکار:</strong> ساخت ویدیوهای کوتاه تیک‌تاک و ریلز اینستاگرام، با محتوای آموزشی و سرگرم‌کننده.</p>
+            <p><strong>نتیجه:</strong> افزایش فالوئرها و بیشتر شدن پیام‌های دایرکت برای هماهنگی بازدید ملک. (آمار فرضی)</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials-farsi" class="container">
-      <h2>تستیمونیال‌ها و نظرات (نمونه‌های ساختگی)</h2>
-      <blockquote>
-        «همکاری با این تیم عالی بود! خیلی سریع تونستم حضور آنلاین خودم رو قوی کنم و مشاوره‌های دقیقی گرفتم.»  
-        <br />– رضا، مشاور املاک (نمونه آزمایشی)
-      </blockquote>
-      <blockquote>
-        «استراتژی‌های پیشنهادی باعث شد مشتری‌های زیادی از طریق شبکه‌های اجتماعی جذب کنم. ممنونم از تیم حرفه‌ایتون!»  
-        <br />– سارا، مشاور املاک (نمونه آزمایشی)
-      </blockquote>
+    <!-- TESTIMONIALS SECTION (FARSI) -->
+    <section id="testimonials-farsi">
+      <div class="section-inner">
+        <h2>تستیمونیال‌ها و نظرات (نمونه‌های ساختگی)</h2>
+        <div class="testimonial">
+          <p>«همکاری با این تیم عالی بود! خیلی سریع تونستم حضور آنلاین خودم رو قوی کنم و مشاوره‌های دقیقی گرفتم.»</p>
+          <p class="author">– رضا، مشاور املاک (نمونه آزمایشی)</p>
+        </div>
+        <div class="testimonial">
+          <p>«استراتژی‌های پیشنهادی باعث شد مشتری‌های زیادی از طریق شبکه‌های اجتماعی جذب کنم. ممنونم از تیم حرفه‌ایتون!»</p>
+          <p class="author">– سارا، مشاور املاک (نمونه آزمایشی)</p>
+        </div>
+      </div>
     </section>
 
-    <section id="pricing-farsi" class="container">
-      <h2>تعرفه‌ها</h2>
-      <h3>بسته ویژه مدیریت شبکه‌های اجتماعی – ۲۹۹ دلار در ماه</h3>
-      <ul>
-        <li>مدیریت روزانه‌ی اینستاگرام، فیسبوک، توییتر، تیک‌تاک و ...</li>
-        <li>تولید محتوای جذاب و مرتبط با حوزه املاک</li>
-        <li>زمان‌بندی پست‌ها و پاسخگویی به مخاطب‌ها</li>
-        <li>گزارش ماهانه عملکرد و پیشنهادهای بهبود</li>
-      </ul>
-      <p>گزینه‌های بالاتر یا اختصاصی در صورت نیاز قابل ارائه هستند.</p>
+    <!-- PRICING SECTION (FARSI) -->
+    <section id="pricing-farsi">
+      <div class="section-inner">
+        <h2>تعرفه‌ها</h2>
+        <div class="pricing-table">
+          <h3>بسته ویژه مدیریت شبکه‌های اجتماعی</h3>
+          <div class="price">۲۹۹ دلار / ماه</div>
+          <ul>
+            <li>مدیریت روزانه‌ی اینستاگرام، فیسبوک، توییتر، تیک‌تاک و ...</li>
+            <li>تولید محتوای جذاب و مرتبط با حوزه املاک</li>
+            <li>زمان‌بندی پست‌ها و پاسخگویی به مخاطب‌ها</li>
+            <li>گزارش ماهانه عملکرد و پیشنهادهای بهبود</li>
+          </ul>
+          <p>گزینه‌های بالاتر یا اختصاصی در صورت نیاز قابل ارائه هستند.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact-farsi" class="container">
-      <h2>برای شروع، با ما تماس بگیرید</h2>
-      <p>اگه دوست دارین درباره جزئیات بیشتر بدونین یا هر سوال و ایده‌ای دارین، کافیه فرم زیر رو پر کنین یا با ما تماس بگیرین.</p>
-      <p><strong>ایمیل:</strong> info@mockupmarketing.com<br/>
-         <strong>شماره تماس:</strong> +1 (416) 123-4567
-      </p>
-      <p><a href="#">لینک به فرم تماس</a></p>
+    <!-- CONTACT SECTION (FARSI) -->
+    <section id="contact-farsi">
+      <div class="section-inner">
+        <h2>برای شروع، با ما تماس بگیرید</h2>
+        <div class="contact-info">
+          <p>اگه دوست دارین درباره جزئیات بیشتر بدونین یا هر سوال و ایده‌ای دارین، کافیه فرم زیر رو پر کنین یا با ما تماس بگیرین.</p>
+          <p><strong>ایمیل:</strong> info@mockupmarketing.com<br/>
+             <strong>شماره تماس:</strong> +1 (416) 123-4567
+          </p>
+          <p><a href="#">لینک به فرم تماس</a></p>
+        </div>
+      </div>
     </section>
-  </div><!-- End of Farsi Content -->
+  </div>
+  <!-- END FARSI CONTENT -->
 
-  <!-- ENGLISH CONTENT (LTR) -->
+
+  <!-- ========== ENGLISH CONTENT ========== -->
   <div id="englishContent" dir="ltr" style="display:none;">
-    <div id="home-english" class="hero">
-      <h1>Stand Out in Toronto’s Real Estate Market with Our Social Media Marketing</h1>
-      <p>We’re here to strengthen your online presence, attract new clients, and elevate your credibility.</p>
-      <a href="#contact-english" class="cta-btn">Get in Touch</a>
+    <!-- HERO SECTION (ENGLISH) -->
+    <div 
+      class="hero" 
+      id="home-english"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1585689386908-d3f9fb2b8bef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+      ">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Stand Out in Toronto’s Real Estate Market with Our Social Media Marketing</h1>
+        <p>We’re here to strengthen your online presence, attract new clients, and elevate your credibility.</p>
+        <a href="#contact-english" class="cta-btn">Get in Touch</a>
+      </div>
     </div>
 
-    <section id="about-english" class="container">
-      <h2>About Us</h2>
-      <p>We’re a creative team dedicated to helping Iranian real estate agents in Toronto grow their market share with a strong social media presence. Our philosophy is simple: deliver high-quality content and smart strategies that build trust and satisfy clients.</p>
+    <!-- ABOUT SECTION (ENGLISH) -->
+    <section id="about-english">
+      <div class="section-inner">
+        <h2>About Us</h2>
+        <p class="about-text">
+          We’re a creative team dedicated to helping Iranian real estate agents in Toronto expand their market share through a strong social media presence. Our philosophy is simple: deliver high-quality content and smart strategies that build trust and satisfy clients.
+        </p>
+        <img 
+          src="https://images.unsplash.com/photo-1604503467502-88d7b5592b34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1050&q=80" 
+          alt="About Us (Placeholder)" 
+        />
+      </div>
     </section>
 
-    <section id="services-english" class="container">
-      <h2>Our Services</h2>
-      <ul>
-        <li><strong>Full Social Media Management:</strong> Content creation, scheduling, and audience engagement on Instagram, Facebook, Twitter, TikTok, and more.</li>
-        <li><strong>Mobile-Friendly Website Design:</strong> We design and build a professional website to attract clients and highlight your credibility.</li>
-        <li><strong>Branding & Visual Identity:</strong> Helping your personal brand stand out in the competitive real estate market.</li>
-        <li><strong>Online Advertising Consultation:</strong> Selecting the best platforms and ad strategies for higher sales.</li>
-      </ul>
+    <!-- SERVICES SECTION (ENGLISH) -->
+    <section id="services-english">
+      <div class="section-inner">
+        <h2>Our Services</h2>
+        <ul class="services-list">
+          <li><strong>Full Social Media Management:</strong> Content creation, scheduling, and audience engagement on Instagram, Facebook, Twitter, TikTok, and more.</li>
+          <li><strong>Mobile-Friendly Website Design:</strong> We design and build a professional website to attract clients and highlight your credibility.</li>
+          <li><strong>Branding & Visual Identity:</strong> We help your personal brand stand out in the competitive real estate market.</li>
+          <li><strong>Online Advertising Consultation:</strong> Choosing the best platforms and strategies to boost sales.</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="case-studies-english" class="container">
-      <h2>Case Studies (Mock Examples)</h2>
-      <div class="grid">
-        <div>
-          <h3>Case Study #1</h3>
-          <p><strong>Challenge:</strong> A new real estate agent in Toronto needed better online visibility.</p>
-          <p><strong>Solution:</strong> Designed Instagram and Facebook campaigns + improved website SEO.</p>
-          <p><strong>Results:</strong> Significant increase in inbound calls and consultation requests. (Mock figures)</p>
-        </div>
-        <div>
-          <h3>Case Study #2</h3>
-          <p><strong>Challenge:</strong> An experienced real estate agent wanting to attract younger clients.</p>
-          <p><strong>Solution:</strong> Created short TikTok and Instagram Reels with educational and entertaining content.</p>
-          <p><strong>Results:</strong> Growth in followers and more direct messages to schedule property viewings. (Mock figures)</p>
+    <!-- CASE STUDIES SECTION (ENGLISH) -->
+    <section id="case-studies-english">
+      <div class="section-inner">
+        <h2>Case Studies (Mock Examples)</h2>
+        <div class="case-studies-grid">
+          <!-- CASE STUDY 1 -->
+          <div class="case-study">
+            <h3>Case Study #1</h3>
+            <p><strong>Challenge:</strong> A new real estate agent in Toronto needed better online visibility.</p>
+            <p><strong>Solution:</strong> Designed Instagram and Facebook campaigns + improved website SEO.</p>
+            <p><strong>Results:</strong> Significant increase in inbound calls and consultation requests. (Mock figures)</p>
+          </div>
+          <!-- CASE STUDY 2 -->
+          <div class="case-study">
+            <h3>Case Study #2</h3>
+            <p><strong>Challenge:</strong> An experienced real estate agent wanting to attract younger clients.</p>
+            <p><strong>Solution:</strong> Created short TikTok and Instagram Reels with educational and entertaining content.</p>
+            <p><strong>Results:</strong> Growth in followers and more direct messages to schedule property viewings. (Mock figures)</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials-english" class="container">
-      <h2>Testimonials & Reviews (Mock)</h2>
-      <blockquote>
-        “Working with this team was fantastic! I quickly strengthened my online presence and got very precise guidance.”
-        <br />– Reza, Real Estate Agent (Mock)
-      </blockquote>
-      <blockquote>
-        “The recommended strategies helped me attract many new clients through social media. Thanks to your professional team!”
-        <br />– Sara, Real Estate Agent (Mock)
-      </blockquote>
+    <!-- TESTIMONIALS SECTION (ENGLISH) -->
+    <section id="testimonials-english">
+      <div class="section-inner">
+        <h2>Testimonials & Reviews (Mock)</h2>
+        <div class="testimonial">
+          <p>“Working with this team was fantastic! I quickly strengthened my online presence and got very precise guidance.”</p>
+          <p class="author">– Reza, Real Estate Agent (Mock)</p>
+        </div>
+        <div class="testimonial">
+          <p>“The recommended strategies helped me attract many new clients through social media. Thanks to your professional team!”</p>
+          <p class="author">– Sara, Real Estate Agent (Mock)</p>
+        </div>
+      </div>
     </section>
 
-    <section id="pricing-english" class="container">
-      <h2>Pricing</h2>
-      <h3>Special Social Media Management Package – $299/Month</h3>
-      <ul>
-        <li>Daily management of Instagram, Facebook, Twitter, TikTok, and more</li>
-        <li>Creation of engaging, real-estate-focused content</li>
-        <li>Post scheduling and audience engagement</li>
-        <li>Monthly performance reports and improvement suggestions</li>
-      </ul>
-      <p>Higher or custom plans are available upon request.</p>
+    <!-- PRICING SECTION (ENGLISH) -->
+    <section id="pricing-english">
+      <div class="section-inner">
+        <h2>Pricing</h2>
+        <div class="pricing-table">
+          <h3>Special Social Media Management Package</h3>
+          <div class="price">$299 / Month</div>
+          <ul>
+            <li>Daily management of Instagram, Facebook, Twitter, TikTok, and more</li>
+            <li>Creation of engaging, real-estate-focused content</li>
+            <li>Post scheduling and audience engagement</li>
+            <li>Monthly performance reports and improvement suggestions</li>
+          </ul>
+          <p>Higher or custom plans are available upon request.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact-english" class="container">
-      <h2>Get Started Today</h2>
-      <p>If you’d like to learn more or have any questions or ideas, just fill out the form below or give us a call.</p>
-      <p><strong>Email:</strong> info@mockupmarketing.com<br/>
-         <strong>Phone:</strong> +1 (416) 123-4567
-      </p>
-      <p><a href="#">Online Contact Form</a></p>
+    <!-- CONTACT SECTION (ENGLISH) -->
+    <section id="contact-english">
+      <div class="section-inner">
+        <h2>Get Started Today</h2>
+        <div class="contact-info">
+          <p>If you’d like to learn more details or have any questions or ideas, simply fill out the form below or give us a call.</p>
+          <p><strong>Email:</strong> info@mockupmarketing.com<br/>
+             <strong>Phone:</strong> +1 (416) 123-4567
+          </p>
+          <p><a href="#">Online Contact Form</a></p>
+        </div>
+      </div>
     </section>
-  </div><!-- End of English Content -->
+  </div>
+  <!-- END ENGLISH CONTENT -->
 
-  <!-- FOOTER -->
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <div class="container">
-      <p>© 2025 MockupMarketing. All Rights Reserved.</p>
-      <p>This is a mock website for demonstration purposes only.</p>
-      <p>
-        <a href="#" onclick="showContent('farsi')">Farsi</a> | 
-        <a href="#" onclick="showContent('english')">English</a>
-      </p>
-    </div>
+    <p>© 2025 MockupMarketing. All Rights Reserved.</p>
+    <p>This is a mock website for demonstration purposes only.</p>
+    <p>
+      <a href="#" onclick="showContent('farsi')">Farsi</a> | 
+      <a href="#" onclick="showContent('english')">English</a>
+    </p>
   </footer>
 
+  <!-- ========== JAVASCRIPT ========== -->
   <script>
     // Simple Language Toggle
     const farsiContent = document.getElementById('farsiContent');
@@ -326,7 +590,13 @@
         farsiContent.style.display = 'none';
         englishContent.style.display = 'block';
       }
+      // Optionally, scroll to the top after language switch
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Default to Farsi on initial load
+    showContent('farsi');
   </script>
 </body>
 </html>
+
